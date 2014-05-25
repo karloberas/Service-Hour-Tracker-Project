@@ -1,0 +1,40 @@
+<div class="container">
+
+	<div class="jumbotron" style="max-width: 50%; text-align: center; margin-left: auto; margin-right: auto;">
+	<%= simple_form_for dorm_assistant do |da| %>
+	  <div class="form-group">
+<% if !@message.nil? %>
+                <div class="alert alert-danger"> 
+		<%= da.error_messages %>
+                </div>
+<% end %>
+		<label>Name</label>
+		<%= da.text_field :name, class: "form-control", placeholder: "Enter Your Full Name", required: true %>
+		<label>ID Number</label>
+		<div style="margin-bottom: 10px;">
+		  <% if edit != true %>
+		    <%= da.number_field :id_num, class: "form-control bfh-number", placeholder: "Enter Your ID Number", required: true %>
+		  <% else %>
+		    <%= da.number_field :id_num, :readonly => true, class: "form-control bfh-number", placeholder: "Enter Your ID Number", required: true %>      
+		  <% end %> 
+		</div>
+		<label>Year Level</label>
+		<%= da.select(:year, (1..5).to_a.map{|i| [i,i]}) %>
+		<br>
+		<label>Course</label>
+		<%= da.text_field :course, class: "form-control", placeholder: "Enter Your Course", required: true  %>
+		<label>Room Number</label>
+		<div style="margin-bottom: 10px;">
+		  <%= da.text_field :room, class: "form-control", placeholder: "Enter Your Room Number", required: true  %>
+		</div>
+		<label>Scholarship</label>
+		<%= da.radio_button(:scholarship_type, "Full") %>&nbsp;<span>Full</span>   
+		<%= da.radio_button(:scholarship_type, "Partial") %>&nbsp;<span>Partial</span>    
+		<h3>Hours to be Renderd</h3>
+		<%= da.number_field :num_hours, class: "form-control bfh-number", placeholder: "Enter Number of Hours", required: true  %>
+	  </div>
+		<%= da.submit "Save", class: "btn btn-primary btn-lg" %>
+                <%= link_to "Cancel", dorm_assistants_path, class: "btn btn-warning btn-lg"%>               
+	<% end %>
+	</div>
+</div>

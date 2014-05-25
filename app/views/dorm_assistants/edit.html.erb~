@@ -1,0 +1,3 @@
+<h1>Edit Information</h1>
+<hr>
+<%= render partial: "dorm_assistants/form", locals: { dorm_assistant: @dorm_assistant, edit: true } %>

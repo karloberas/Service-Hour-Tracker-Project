@@ -1,0 +1,8 @@
+class ServiceHour < ActiveRecord::Base
+
+  validates :area, presence: true
+  validates :time_start, presence: true, uniqueness: true
+  validates :time_end, presence: true, uniqueness: true
+
+
+end

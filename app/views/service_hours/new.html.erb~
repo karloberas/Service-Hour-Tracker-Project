@@ -1,0 +1,5 @@
+<div class="page-header">
+  <h1 style="text-align:center; color:#00C957">Add Service Hour</h1>
+</div>
+
+<%= render partial: "service_hours/form", locals: { service_hour: @service_hour, dorm_assistant: @dorm_assistant } %>

@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="jumbotron pull-left" style= "max-width: 50%;">
+    <div class="alert alert-info"><h2 style="text-align: center;"><%= @dorm_assistant.name %></h2></div>    
+    <div class="alert alert-warning">
+     <div class="table-responsive">
+      <table>
+        <tr>
+          <td>ID Number: </td>
+          <td><%= @dorm_assistant.id_num %></td>
+        </tr>
+        <tr>
+          <td>Yr & Course: </td>
+          <td><%= @dorm_assistant.year %> - <%= @dorm_assistant.course%></td>
+        </tr>
+        <tr>
+          <td>Room Number: </td>
+          <td><%= @dorm_assistant.room %></td>
+        </tr>
+        <tr>
+          <td>Type of Scholarship: </td>
+          <td><%= @dorm_assistant.scholarship_type %></td>
+        </tr>
+        <tr>
+          <td>Total Hours to Render: </td>
+          <td><%= @dorm_assistant.num_hours %></td>
+        </tr>
+        <tr>
+          <td>Rendered Hours: </td>
+          <td><%= @dorm_assistant.hours_rendered %></td>
+        </tr>
+      </table>
+     </div>
+    </div>
+    <p style="text-align: center;"><%= link_to "Return", dorm_assistants_path, class: "btn btn-warning btn-lg"%></p>
+  </div>
+  <div class="jumbotron pull-right" style="max-width: 50%;">
+    <div class="alert alert-info"><h2 style="text-align: center;">Record of Service Hours</h2></div>
+    <p style="text-align: center;"><%= link_to "Add New Service Hour", new_service_hour_path(:id => @dorm_assistant.id), class: "btn btn-info"%></p>
+	<% @service_hours.each do |service_hour| %>
+	    <% if @dorm_assistant.id_num == service_hour.id_num %>
+		<div class="panel panel-warning">
+		  <div class="panel-heading">
+		    <h2 class="panel-title">Area: <%= service_hour.area %></h2>
+		  </div>
+		  <div class="panel-body">
+			<label>Start: </label>
+			<%= service_hour.time_start %>
+			<br>
+			<label>End: </label>
+			<%= service_hour.time_end %>
+			<br>
+			<label>Number of Hours: </label>
+			<%= service_hour.num_hours %>
+			<br>
+			<%= link_to "Rendered", service_hour_path(:id => service_hour.id, :render => true), method: :delete, data: { confirm: "Have you really rendered?" }, class: "btn btn-success btn-sm" %>
+			<%= link_to "Edit", edit_service_hour_path(:id => service_hour.id), class: "btn btn-default btn-sm" %>
+			<%= link_to "Delete", service_hour_path(:id => service_hour.id, :render => false), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-sm" %>
+		  </div>
+		</div>
+
+	    <% end %>
+	<% end %>
+  </div>
+</div>
+
+

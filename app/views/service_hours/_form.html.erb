@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="jumbotron" style="max-width: 60%; text-align: center; margin-left: auto; margin-right: auto;">
+	<%= simple_form_for service_hour do |s| %>
+             <% if !@message.nil? %>
+                <div class="alert alert-danger"> 
+		  <%= s.error_messages %>
+                  <%= @message %>
+                </div>
+             <% end %>
+          <div class="form-group">
+		<label>ID Number</label>
+		<%= s.text_field :id_num, :value => dorm_assistant.id_num, :readonly => true, class: "form-control bfh-number" %>
+		<label>Area:</label>
+		<%= s.text_field :area, class: "form-control bfh-number", required: true, placeholder: "Enter Area: P => Porter's Booth, C => Cervini Office, UD => University Dorm" %>
+                <br>
+		<label>Start:</label>
+		<%= s.datetime_select :time_start, :default => {:minute => 00} %>
+                <br>
+		<label>End:</label>
+		<%= s.datetime_select :time_end, :default => {:minute => 00}  %>
+            <div class="form-group">
+		<%= s.submit "Save", class: "btn btn-primary btn-lg" %>
+                <%= link_to "Cancel", service_hours_path(:id => dorm_assistant.id), class: "btn btn-warning btn-lg"%>
+	<% end %>	
+  </div>
+</div>

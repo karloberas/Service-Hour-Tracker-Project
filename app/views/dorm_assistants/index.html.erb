@@ -1,0 +1,38 @@
+<div class="page-header">
+  <h1 style="text-align:center;"><span style="color:#00C957;">All Dorm Assistants</span></h1>
+</div>
+
+<div class="container">
+	<div class="jumbotron">
+
+		<div class="table-responsive">
+		 <table class="table table-hover">
+		   <thead>
+		    <tr class="warning">
+		      <td>Name</td>
+		      <td>ID Number</td>
+		      <td>Yr & Course </td>
+		      <td>Room Number </td>
+		      <td>Type of Scholarship</td>
+		      <td></td>
+		      <td></td>
+		    </tr>
+		   </thead>
+		   <tbody>
+		    <% @dorm_assistants.each do |dorm_assistant| %>
+		      <tr>
+			<td><%= link_to dorm_assistant.name, dorm_assistant_path(dorm_assistant.id) %></td>
+			<td><%= dorm_assistant.id_num %></td>
+			<td><%= dorm_assistant.year %> - <%=dorm_assistant.course %></td>
+			<td><%= dorm_assistant.room %></td>
+			<td><%= dorm_assistant.scholarship_type %></td>
+			<td><%= link_to "Edit", edit_dorm_assistant_path(dorm_assistant.id), class: "btn btn-default" %></td>
+			<td><%= link_to "Delete", dorm_assistant_path(dorm_assistant.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %></td>
+		      </tr>
+		    <% end %>
+		   </tbody>
+		  </table>
+		</div>
+		<p style="text-align: center;"><%= link_to "Add New Dorm Assistant", new_dorm_assistant_path, class: "btn btn-primary btn-lg"%></p>
+	</div>
+</div>

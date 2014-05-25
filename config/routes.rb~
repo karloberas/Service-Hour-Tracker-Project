@@ -1,0 +1,12 @@
+Rails.application.routes.draw do
+
+  root to: "pages#index"
+
+  get '/about', to: 'pages#about', as: :about
+
+  resources :dorm_assistants
+
+  resources :service_hours
+
+
+end

@@ -1,0 +1,36 @@
+<div class="page-header">
+  <h1 style="text-align:center;"><span style="color:#00C957;">Top 5 Dorm Assistants</span></h1>
+</div>
+<div class="container">
+  <div class="pull-left" style="max-width:30%;">
+    <% @top_dorm_assistants.reverse.each do |top| %>
+	<div class="panel panel-success">
+	  <div class="panel-heading"><%= top.name %></div>
+	  <div class="panel-body">
+	      <table class="table table-striped">
+		<tr>
+		  <td>ID Number: </td>
+		  <td><%= top.id_num %></td>
+		</tr>
+		<tr>
+		  <td>Yr & Course: </td>
+		  <td><%= top.year %> - <%= top.course%></td>
+		</tr>
+		<tr>
+		  <td>Type of Scholarship: </td>
+		  <td><%= top.scholarship_type %></td>
+		</tr>
+		<tr>
+		  <td>Total Hours to Render: </td>
+		  <td><%= top.num_hours %></td>
+		</tr>
+		<tr>
+		  <td>Rendered Hours: </td>
+		  <td><%= top.hours_rendered %></td>
+		</tr>
+	      </table>
+	  </div>
+	</div>
+    <% end %>
+  </div>
+</div>

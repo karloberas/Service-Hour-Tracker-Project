@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="jumbotron pull-left" style="max-width: 50%;">
+    <h2 style="text-align: center;color: white;">About this Website</h2>
+    <div class="well">
+    <p>
+      Service Hour Tracker is a fully-responsive website designed using Ruby on Rails and Bootstrap 3.
+      <br><br>It allows the head of Dorm Assistants to keep track of all the DAs and their service hours at the same time.<br><br>It has the following functions: <ul><li>List top 5 DAs with most number of hours rendered for awarding</li><li>lists all the DAs of the year alphabetically with their respective information</li><li>shows all the service hours signed-up by each DA sorted according to datetime</li><li>uses two models to allow Add, Edit and Delete functions for DAs and their service hours</li></ul>and anticipates for the following errors: <ul><li>no two DAs should have the same ID number</li><li>every field in the form is required</li><li>service hours are calculated in terms of number of hours</li><li>number of hours can't be negative</li></ul>
+
+
+
+
+    </p>
+    </div>
+  </div>
+  <div class="jumbotron pull-right" style="max-width: 50%;">
+    <h2 style="text-align: center;color: white;">About the Developer</h2>
+    <p style="text-align: center;"><img src="<%= asset_path 'me.jpg' %>" class="img-circle" style="width: 300px; height: 300px; margin-bottom: 5px;"></p>
+   <div class="table-responsive">
+    <table class="table">
+      <tr class="active">
+        <td>Name:</td>
+        <td>Karl John Oberas</td>
+      </tr>
+      <tr class="success">
+        <td>Yr & Course: </td>
+        <td>3-BS MIS-MS CS</td>
+      </tr>
+      <tr class="warning">
+        <td>E-mail: </td>
+        <td>karl.oberas@obf.ateneo.edu</td>
+      </tr>
+      <tr class="danger">
+        <td>Course Code & Section: </td>
+        <td>MIS 21-Section B</td>
+      </tr>
+      <tr class="active">
+        <td>Course Instructor: </td>
+        <td>Raphael Alampay</td>
+      </tr>
+    </table>
+   </div>
+  </div>
+</div>

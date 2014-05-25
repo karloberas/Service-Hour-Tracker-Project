@@ -1,0 +1,13 @@
+class CreateServiceHours < ActiveRecord::Migration
+  def change
+    create_table :service_hours do |t|
+      t.datetime :time_start
+      t.datetime :time_end
+      t.string :area
+      t.integer :id_num
+      t.integer :num_hours
+
+      t.timestamps
+    end
+  end
+end

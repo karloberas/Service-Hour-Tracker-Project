@@ -1,0 +1,26 @@
+<h1><%= @dorm_assistant.name %></h1>
+<hr>
+<table>
+  <tr>
+    <td>Yr & Course: </td>
+    <td><%= @dorm_assistant.year %> - <%= @dorm_assistant.course%></td>
+  </tr>
+  <tr>
+    <td>Room Number: </td>
+    <td><%= @dorm_assistant.room %></td>
+  </tr>
+  <tr>
+    <td>Type of Scholarship: </td>
+    <td><%= @dorm_assistant.scholarship_type %></td>
+  </tr>
+  <tr>
+    <td>Total Hours to Render: </td>
+    <td><%= @dorm_assistant.num_hours %></td>
+  </tr>
+  <tr>
+    <td>Rendered Hours: </td>
+    <td><%= @dorm_assistant.hours_rendered %></td>
+  </tr>
+</table>
+<hr>
+<h2>Record of Service Hours</h2>

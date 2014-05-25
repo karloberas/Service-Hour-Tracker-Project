@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  year: 
+  course: MyString
+  room: MyString
+  scholarship_type: MyString
+  num_hours: 
+
+two:
+  name: MyString
+  year: 
+  course: MyString
+  room: MyString
+  scholarship_type: MyString
+  num_hours: 

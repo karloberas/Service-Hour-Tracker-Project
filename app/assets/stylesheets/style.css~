@@ -1,0 +1,43 @@
+body {
+  background:url("/assets/bg2.jpg");
+  background-size: 100%;
+
+}
+
+.jumbotron {
+  background: rgba(225, 225, 225, .5);
+}
+
+.navbar-default {
+  background: none repeat scroll 0% 0% rgba(225, 225, 225, 0.1);
+  border-color: rgba(225, 225, 225, 0.3);
+}
+
+
+.page-header {
+  border-bottom: 1px solid #5DFC0A;
+
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  background: white;
+
+}
+
+ul.nav a:hover {
+  background: white;
+}
+
+.home {
+  background:url("/assets/Start.png");
+  background-size
+
+}
+
+body.home .navbar-default {
+  display: none;
+}
+
+a {
+  color:#00C957;
+}
